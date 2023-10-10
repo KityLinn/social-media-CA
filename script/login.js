@@ -37,6 +37,7 @@ const loginFunc = async (loginURL, userData) => {
     const data = await res.json();
 	console.log(data);
 	localStorage.setItem("token", data.accessToken);
+    window.location.href = "./posts.html"
 }
 
 

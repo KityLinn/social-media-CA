@@ -17,11 +17,11 @@ logIn.addEventListener("click", (e) => {
     e.preventDefault
     const userLogin = {
         name: logUsername.value,
-        email: logEmail.value,
         password: logPassword.value,
     };
+
     loginFunc(urls.login, userLogin)
-})
+});
 
 
 

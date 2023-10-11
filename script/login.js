@@ -9,14 +9,13 @@ const urls = {
 
 
 const logIn = document.querySelector("#login");
-const logUsername = document.querySelector("#name-2");
-const logEmail = document.querySelector("#email-2");
-const logPassword = document.querySelector("#password-2");
+const logUsername = document.querySelector("#login-name");
+const logPassword = document.querySelector("#login-password");
 
 logIn.addEventListener("click", (e) => {
-    e.preventDefault
+    e.preventDefault()
     const userLogin = {
-        name: logUsername.value,
+        username: logUsername.value,
         password: logPassword.value,
     };
 

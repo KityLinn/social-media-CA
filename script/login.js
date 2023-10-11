@@ -41,3 +41,6 @@ const loginFunc = async (loginURL, userData) => {
 }
 
 
+/* Username: Linn2
+Email:Linn2@noroff.no
+password: blipblopbloop102*/

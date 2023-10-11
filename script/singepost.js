@@ -1,5 +1,9 @@
 import { urls } from "./module.mjs";
 
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get("id");
+
 async function getPosts(url) {
 	const token = localStorage.getItem("token");
 	const res = await fetch(url, {
@@ -21,4 +25,4 @@ async function getPosts(url) {
 
 	 
 
-getPosts(urls.post(2))
+getPosts(urls.post(id))

@@ -24,7 +24,10 @@ function createPost(data) {
 			  <h2>${data.title}</h2>
 			  <p>${data.body}</p>
 			  <button onclick="showDetails(${data.id})">Details</button>
+			  <a href="./singepost.html?id=${data.id}">Details</a>
 			</div>`;
   }
 
 getPosts(urls.posts)
+
+

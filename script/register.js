@@ -14,7 +14,7 @@ const regEmail = document.querySelector("#email-1");
 const regPassword = document.querySelector("#password-1");
 
 register.addEventListener("click", (e) => {
-    e.preventDefault
+    e.preventDefault()
     const userReg = {
         name: regUsername.value,
         email: regEmail.value,

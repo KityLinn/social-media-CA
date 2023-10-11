@@ -27,4 +27,4 @@ function createPost(data) {
 			</div>`;
   }
 
-getPosts(urls.posts)
+getPosts(urls.post)

@@ -11,7 +11,7 @@ postSubmit.addEventListener("click", (e) => {
         body: postContent.value,
     };
 
-    createPost(urls.login, userLogin)
+    createPost(urls.createPost, userLogin)
 });
 
 

@@ -20,9 +20,15 @@ async function getPosts(url) {
 	  main.innerHTML =`<div class="post">
       <h2>${data.title}</h2>
       <p>${data.body}</p>
+	  <button id="delete">Delete Post</button>
     </div>`;
 }
 
-	 
-
 getPosts(urls.post(id))
+
+const delteButton = document.querySelector("#delete");
+
+delteButton.addEventListener("click", (e) => {
+	console.log(delteButton)
+})
+

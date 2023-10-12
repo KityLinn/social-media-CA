@@ -21,8 +21,10 @@ async function getPosts(url) {
       <h2>${data.title}</h2>
       <p>${data.body}</p>
 	  <button id="delete">Delete Post</button>
+	  <button id="edit">Edit Post</button>
     </div>`;
 	deleteButtonFunc(data.id)
+	editButtonFunc(data.id)
 
 }
 
@@ -50,4 +52,14 @@ const deletePost = async (deleteLink) => {
 	const data = await res.json();
 	console.log(data);
 	window.location.href = "./posts.html"	
+}
+
+const editButtonFunc = (id) => {
+	const editButton = document.querySelector("#edit");
+	editButton.addEventListener("click", (e) => {
+		e.preventDefault
+		window.location.href = `./editpost.html?id=${id}`
+		
+		
+	});	
 }

@@ -22,13 +22,31 @@ async function getPosts(url) {
       <p>${data.body}</p>
 	  <button id="delete">Delete Post</button>
     </div>`;
+	deleteButtonFunc(data.id)
+
 }
 
 getPosts(urls.post(id))
 
-const delteButton = document.querySelector("#delete");
+const deleteButtonFunc = (id) => {
+	const deleteButton = document.querySelector("#delete");
+	deleteButton.addEventListener("click", (e) => {
+		e.preventDefault
+		deletePost(urls.delete(id))
+		
+		
+	});	
+}
 
-delteButton.addEventListener("click", (e) => {
-	console.log(delteButton)
-})
-
+const deletePost = async (deleteLink) => {
+	const token = localStorage.getItem("token");
+	const res = await fetch(deleteLink , {
+		method: "DELETE",
+		headers: {
+			"Content-Type": "Application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	});
+	const data = await res.json();
+	console.log(data);
+}

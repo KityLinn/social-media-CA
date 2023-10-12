@@ -31,3 +31,16 @@ function createPost(data) {
 getPosts(urls.posts)
 
 
+function filter() {
+	var tag = document.querySelector("#tag-search").value;
+	var active = document.querySelector("#active-check").checked;
+	var url = urls.posts;
+	if (tag) {
+	  url += "&_tag=" + tag;
+	}
+	if (active) {
+	  url += "&_active=true";
+	}
+	getPosts(url);
+  }
+

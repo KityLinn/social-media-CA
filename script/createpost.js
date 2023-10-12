@@ -6,27 +6,28 @@ const postContent = document.querySelector("#post-content");
 
 postSubmit.addEventListener("click", (e) => {
     e.preventDefault()
-    const userLogin = {
+    const post = {
         title: postTitle.value,
         body: postContent.value,
     };
 
-    createPost(urls.createPost, userLogin)
+    createPost(urls.createPost, post)
 });
 
 
 
 const createPost = async (createURL, postData) => {
+    const token = localStorage.getItem("token");
     const res = await fetch (createURL, {
         method: "post",
         headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(postData),
     });
     const data = await res.json();
 	console.log(data);
-	localStorage.setItem("token", data.accessToken);
-    window.location.href = "./posts.html"
+
 
 }

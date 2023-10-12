@@ -49,4 +49,5 @@ const deletePost = async (deleteLink) => {
 	});
 	const data = await res.json();
 	console.log(data);
+	window.location.href = "./posts.html"	
 }

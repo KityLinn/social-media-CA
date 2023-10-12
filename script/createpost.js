@@ -28,6 +28,7 @@ const createPost = async (createURL, postData) => {
     });
     const data = await res.json();
 	console.log(data);
+    window.location.href = "./posts.html"
 
 
 }

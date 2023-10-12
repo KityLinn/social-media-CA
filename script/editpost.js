@@ -33,25 +33,25 @@ async function getEdit(url) {
         <button type="submit" id="post-edit">Submit your edited post</button>
       </div>
     </form> `;
-const postSubmit = document.querySelector("post-edit");
+const postEdit = document.querySelector("#post-edit");
 const postTitle = document.querySelector("#post-title");
 const postContent = document.querySelector("#post-content");
 
-postSubmit.addEventListener("click", (e) => {
+postEdit.addEventListener("click", (e) => {
     e.preventDefault()
     const post = {
         title: postTitle.value,
         body: postContent.value,
     };
 
-    createPost(urls.editPost, post)
+    editPost(urls.editPost(id), post)
 });
 
 
 const editPost = async (editURL, postData) => {
     const token = localStorage.getItem("token");
     const res = await fetch (editURL, {
-        method: "PATCH",
+        method: "PUT",
         headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
@@ -60,6 +60,7 @@ const editPost = async (editURL, postData) => {
     });
     const data = await res.json();
 	console.log(data);
+    window.location.href = "./posts.html"
 }
 
 };

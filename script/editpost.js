@@ -1,6 +1,39 @@
 import { urls } from "./module.mjs";
 
-const postSubmit = document.querySelector("#post-submit");
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get("id");
+
+
+async function getEdit(url) {
+	const token = localStorage.getItem("token");
+	const res = await fetch(url, {
+		method: "GET",
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	});
+	const data = await res.json();
+	console.log(data);
+	var main = document.querySelector("#posts");
+	main.innerHTML = "";
+	  main.innerHTML = `
+      <form id="posts">
+      Create Post
+      <div class="form-outline">
+        <input type="text" id="post-title" name="title" value="${data.title}"/>
+        <label class="form-label" for="post-title">Your post title</label>
+      </div>
+      <div class="form-outline">
+        <textarea name="content" id="post-content" cols="30" rows="10">${data.body}</textarea>
+        <label class="form-label" for="post-content">Your post content</label>
+      </div>
+      <div>
+        <button type="submit" id="post-edit">Submit your edited post</button>
+      </div>
+    </form> `;
+const postSubmit = document.querySelector("post-edit");
 const postTitle = document.querySelector("#post-title");
 const postContent = document.querySelector("#post-content");
 
@@ -11,15 +44,14 @@ postSubmit.addEventListener("click", (e) => {
         body: postContent.value,
     };
 
-    createPost(urls.createPost, post)
+    createPost(urls.editPost, post)
 });
 
 
-
-const createPost = async (createURL, postData) => {
+const editPost = async (editURL, postData) => {
     const token = localStorage.getItem("token");
-    const res = await fetch (createURL, {
-        method: "post",
+    const res = await fetch (editURL, {
+        method: "PATCH",
         headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
@@ -28,6 +60,9 @@ const createPost = async (createURL, postData) => {
     });
     const data = await res.json();
 	console.log(data);
-
-
 }
+
+};
+
+getEdit(urls.post(id))
+

@@ -30,8 +30,15 @@ function createPost(data) {
 			</div>`;
 			
   }
+var postsNumber = 10
 
-getPosts(urls.posts)
+getPosts(urls.posts(postsNumber));
+
+const morePosts = document.querySelector("#more");
+morePosts.addEventListener("click", (e) => {
+	e.preventDefault()
+	getPosts(urls.posts(postsNumber+=10))
+});
 
 const search = document.querySelector("#search");
 const searchButton = document.querySelector("#search-button");

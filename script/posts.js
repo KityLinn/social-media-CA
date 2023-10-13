@@ -47,9 +47,33 @@ const searchButton = document.querySelector("#search-button");
 
 searchButton.addEventListener("click", (e) => {
     e.preventDefault()
-	search.value
+	searchFunc(search.value, urls.search)
+
 
 });
+
+    const searchFunc = (searchValue, searchURL) => {
+		
+
+	}
+	const searchFetch = async (searchURL) => {
+		const token = localStorage.getItem("token");
+		const res = await fetch(url, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${token}`,
+			},
+		});
+		const data = await res.json();
+		const searchData = data.filter((item) => {
+			return item.body.indexOf(searchVaule)
+			>= 0
+
+		});
+		
+
+	}
 
 	Array.filter((item)=>{return item.contains(søkeord)})
 

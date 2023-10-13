@@ -8,4 +8,5 @@ export const urls = {
     posts: BASE_URL + "social/posts?limit=10&_author=true&_comments=true&_reactions=true",
     createPost: BASE_URL + "social/posts",
     editPost: (id) => BASE_URL + `social/posts/${id}`,
+    search: BASE_URL + "social/posts",
   }

@@ -28,6 +28,7 @@ function createPost(data) {
 			  <button onclick="showDetails(${data.id})">Details</button>
 			  <a href="./singlepost.html?id=${data.id}">Details</a>
 			</div>`;
+			
   }
 
 getPosts(urls.posts)
@@ -39,6 +40,7 @@ const searchButton = document.querySelector("#search-button");
 
 searchButton.addEventListener("click", (e) => {
     e.preventDefault()
+	search.value
 
 });
 

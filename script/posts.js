@@ -69,6 +69,21 @@ searchButton.addEventListener("click", (e) => {
 		const data = await res.json();
 		const searchData = data.filter((e => e.body.toLowerCase().includes(value) || e.title.toLowerCase().includes(value)));
 		console.log(searchData);
+		var main = document.querySelector("#posts");
+	main.innerHTML = "";
+	var html = ""
+	for (var i = 0; i < searchData.length; i++) {
+		html += createSearchPost(searchData[i]); 
+	  }
+	  main.innerHTML = html;
+}
+function createSearchPost(searchDatas) {
+	return `<div class="post">
+			  <h2>${searchDatas.title}</h2>
+			  <p>${searchDatas.body}</p>
+			  <button onclick="showDetails(${searchDatas.id})">Details</button>
+			  <a href="./singlepost.html?id=${searchDatas.id}">Details</a>
+			</div>`;
 
 	}
 

@@ -5,7 +5,7 @@ export const urls = {
     register: BASE_URL + "social/auth/register",
     post: (id) => BASE_URL + `social/posts/${id}`,
     delete: (id) => BASE_URL + `social/posts/${id}`,
-    posts: BASE_URL + "social/posts?limit=10&_author=true&_comments=true&_reactions=true",
+    posts: (amount) => BASE_URL + `social/posts?limit=${amount}&_author=true&_comments=true&_reactions=true`,
     createPost: BASE_URL + "social/posts",
     editPost: (id) => BASE_URL + `social/posts/${id}`,
     search: BASE_URL + "social/posts",

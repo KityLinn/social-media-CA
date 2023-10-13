@@ -53,10 +53,11 @@ searchButton.addEventListener("click", (e) => {
 });
 
     const searchFunc = (searchValue, searchURL) => {
+		searchFetch(searchValue, searchURL)
 		
 
 	}
-	const searchFetch = async (searchURL) => {
+	const searchFetch = async (value, url) => {
 		const token = localStorage.getItem("token");
 		const res = await fetch(url, {
 			method: "GET",
@@ -66,16 +67,12 @@ searchButton.addEventListener("click", (e) => {
 			},
 		});
 		const data = await res.json();
-		const searchData = data.filter((item) => {
-			return item.body.indexOf(searchVaule)
-			>= 0
-
-		});
-		
+		const searchData = data.filter((e => e.body.toLowerCase().includes(value) || e.title.toLowerCase().includes(value)));
+		console.log(searchData);
 
 	}
 
-	Array.filter((item)=>{return item.contains(søkeord)})
+	//Array.filter((item)=>{return item.contains(søkeord)})
 
 function filter() {
 	var tag = document.querySelector("#tag-search").value;

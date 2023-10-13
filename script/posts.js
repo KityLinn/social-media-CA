@@ -1,4 +1,5 @@
 import { urls } from "./module.mjs";
+var notfind = document.querySelector("#notfind");
 
 async function getPosts(url) {
   const token = localStorage.getItem("token");
@@ -70,10 +71,9 @@ const searchFetch = async (value, url) => {
     }
   );
   if (searchData.length == 0) {
-    var notfind = document.querySelector("#notfind");
     notfind.innerHTML = "could not find"
   } else {
-
+    notfind.innerHTML = ""
     var main = document.querySelector("#posts");
     main.innerHTML = "";
     var html = "";

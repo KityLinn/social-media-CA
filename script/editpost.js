@@ -18,7 +18,7 @@ async function getEdit(url) {
 	console.log(data);
 	var main = document.querySelector("#posts");
 	main.innerHTML = "";
-	  main.innerHTML = `
+	  main.innerHTML += `
       <form id="posts">
       Create Post
       <div class="form-outline">

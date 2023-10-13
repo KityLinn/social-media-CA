@@ -17,7 +17,7 @@ async function getPosts(url) {
 	console.log(data);
 	var main = document.querySelector("#posts");
 	main.innerHTML = "";
-	  main.innerHTML =`<div class="post">
+	  main.innerHTML +=`<div class="post">
       <h2>${data.title}</h2>
       <p>${data.body}</p>
 	  <button id="delete">Delete Post</button>

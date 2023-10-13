@@ -1,5 +1,7 @@
 import { urls } from "./module.mjs";
 
+
+
 async function getPosts(url) {
 	const token = localStorage.getItem("token");
 	const res = await fetch(url, {
@@ -30,6 +32,17 @@ function createPost(data) {
 
 getPosts(urls.posts)
 
+const search = document.querySelector("#search");
+const searchButton = document.querySelector("#search-button");
+
+
+
+searchButton.addEventListener("click", (e) => {
+    e.preventDefault()
+
+});
+
+	Array.filter((item)=>{return item.contains(søkeord)})
 
 function filter() {
 	var tag = document.querySelector("#tag-search").value;

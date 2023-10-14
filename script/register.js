@@ -1,4 +1,5 @@
 import { urls } from "./module.mjs";
+import { loginFunc } from "./login.js";
 
 
 const register = document.querySelector("#Sign-up");
@@ -29,7 +30,12 @@ const registerFunc = async (registerURL, userData) => {
     });
     const data = await res.json();
 	console.log(data);
+    loginFunc(urls.login, userReg)
     
 }
 
 
+/* test user
+name: testKit2
+email: testKit2@noroff.no
+password: testtestybleh */

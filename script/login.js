@@ -19,7 +19,7 @@ logIn.addEventListener("click", (e) => {
 
 
 
-const loginFunc = async (loginURL, userData) => {
+export const loginFunc = async (loginURL, userData) => {
     const res = await fetch (loginURL, {
         method: "post",
         headers: {

@@ -70,6 +70,7 @@ const searchFetch = async (value, url) => {
       }
     }
   );
+
   if (searchData.length == 0) {
     notfind.innerHTML = "could not find"
   } else {
@@ -82,19 +83,10 @@ const searchFetch = async (value, url) => {
     }
     main.innerHTML = html;
   };
-  const createSearchPost = (searchDatas) => {
-    return `<div class="post">
-          <h2>${searchDatas.title}</h2>
-          <p>${searchDatas.body}</p>
-          <button onclick="showDetails(${searchDatas.id})">Details</button>
-          <a href="./singlepost.html?id=${searchDatas.id}">Details</a>
-        </div>`;
-  }
-  }
 
+  };
 
-//Array.filter((item)=>{return item.contains(søkeord)})
-
+/*
 function filter() {
   var tag = document.querySelector("#tag-search").value;
   var active = document.querySelector("#active-check").checked;
@@ -106,4 +98,13 @@ function filter() {
     url += "&_active=true";
   }
   getPosts(url);
+}
+*/
+const createSearchPost = (searchDatas) => {
+  return `<div class="post">
+        <h2>${searchDatas.title}</h2>
+        <p>${searchDatas.body}</p>
+        <button onclick="showDetails(${searchDatas.id})">Details</button>
+        <a href="./singlepost.html?id=${searchDatas.id}">Details</a>
+      </div>`;
 }

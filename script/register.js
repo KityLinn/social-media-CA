@@ -1,5 +1,5 @@
 import { urls } from "./module.mjs";
-import { loginFunc } from "./login.js";
+
 
 
 const register = document.querySelector("#Sign-up");
@@ -30,8 +30,22 @@ const registerFunc = async (registerURL, userData) => {
     });
     const data = await res.json();
 	console.log(data);
-    loginFunc(urls.login, userReg)
+    regiLogin(urls.login, userData)
     
+}
+
+const regiLogin = async (url, loginData) => {
+    const res = await fetch (url, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginData),
+    });
+    const data = await res.json();
+	console.log(data);
+	localStorage.setItem("token", data.accessToken);
+    window.location.href = "./posts.html"
 }
 
 

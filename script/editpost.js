@@ -60,7 +60,7 @@ const editPost = async (editURL, postData) => {
     });
     const data = await res.json();
 	console.log(data);
-    window.location.href = "./posts.html"
+   window.location.href = "./posts.html"
 }
 
 };

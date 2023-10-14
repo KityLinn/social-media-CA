@@ -4,7 +4,7 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-async function getPosts(url) {
+const getPosts = async (url) => {
 	const token = localStorage.getItem("token");
 	const res = await fetch(url, {
 		method: "GET",
@@ -25,7 +25,6 @@ async function getPosts(url) {
     </div>`;
 	deleteButtonFunc(data.id)
 	editButtonFunc(data.id)
-
 }
 
 getPosts(urls.post(id))

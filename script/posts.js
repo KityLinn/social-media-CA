@@ -1,7 +1,7 @@
 import { urls } from "./module.mjs";
 var notfind = document.querySelector("#notfind");
 
-async function getPosts(url) {
+const getPosts = async (url) => {
   const token = localStorage.getItem("token");
   const res = await fetch(url, {
     method: "GET",
@@ -82,7 +82,7 @@ const searchFetch = async (value, url) => {
     }
     main.innerHTML = html;
   };
-  function createSearchPost(searchDatas) {
+  const createSearchPost = (searchDatas) => {
     return `<div class="post">
           <h2>${searchDatas.title}</h2>
           <p>${searchDatas.body}</p>

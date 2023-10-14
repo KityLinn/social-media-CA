@@ -5,7 +5,7 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 
-async function getEdit(url) {
+const getEdit = async (url) => {
 	const token = localStorage.getItem("token");
 	const res = await fetch(url, {
 		method: "GET",

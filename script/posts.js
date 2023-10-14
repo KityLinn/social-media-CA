@@ -60,15 +60,9 @@ const searchFetch = async (value, url) => {
   });
   const data = await res.json();
   const searchData = data.filter(
-    (e) => {
-      if (e.body.toLowerCase().includes(value) ||
-      e.title.toLowerCase().includes(value)) {
-        return true;
-      } else {
-        
-        return false;
-      }
-    }
+    (e) =>
+      e.body.toLowerCase().includes(value) ||
+      e.title.toLowerCase().includes(value)
   );
 
   if (searchData.length == 0) {

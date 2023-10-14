@@ -35,7 +35,6 @@ const deleteButtonFunc = (id) => {
 		e.preventDefault
 		deletePost(urls.delete(id))
 		
-		
 	});	
 }
 
@@ -58,7 +57,6 @@ const editButtonFunc = (id) => {
 	editButton.addEventListener("click", (e) => {
 		e.preventDefault
 		window.location.href = `./editpost.html?id=${id}`
-		
-		
+	
 	});	
 }

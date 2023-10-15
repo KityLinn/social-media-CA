@@ -13,7 +13,6 @@ const getPosts = async (url) => {
     },
   });
   const data = await res.json();
-  console.log(data);
   var main = document.querySelector("#posts");
   main.innerHTML = "";
   var html = "";
@@ -102,10 +101,34 @@ const createPost = (data) => {
 var sorting = document.querySelector("#sorting")
 
 sorting.addEventListener("change", (e) => {
-  if (e.value == "desc") {
+  console.log(e.target.value)
+  if (e.target.value == "desc") {
+    sortFunc(urls.search, e.target.value)
 
   }
-  if (e.value == "asc" ) {
+  if (e.target.value == "asc" ) {
+    sortFunc(urls.search, e.target.value)
     
   }
 })
+
+const sortFunc = async (url, sortValue) => {
+  const token = localStorage.getItem("token");
+  const res = await fetch(url + "?sort=created" + "&sortOrder=" + sortValue, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data = await res.json();
+  console.log(data)
+  var main = document.querySelector("#posts");
+  main.innerHTML = "";
+  var html = "";
+  for (var i = 0; i < data.length; i++) {
+    html += createPost(data[i]);
+  }
+  main.innerHTML = html;
+
+}

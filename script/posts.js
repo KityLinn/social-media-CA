@@ -101,4 +101,12 @@ const createSearchPost = (searchDatas) => {
         <button onclick="showDetails(${searchDatas.id})">Details</button>
         <a href="./singlepost.html?id=${searchDatas.id}">Details</a>
       </div>`;
+};
+/*
+var tags= {};
+If (tags[newTag]){
+    Tags[newtag]++
+} else {
+    Tags[newtag] = 1;
 }
+*/

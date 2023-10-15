@@ -35,7 +35,14 @@ getPosts(urls.posts(postsNumber));
 const morePosts = document.querySelector("#more");
 morePosts.addEventListener("click", (e) => {
   e.preventDefault();
+  if (postsNumber == 100) {
+    more.style.display ="none";
+    more.disabled;
+  }
+  else {
   getPosts(urls.posts((postsNumber += 10)));
+ }
+
 });
 
 const search = document.querySelector("#search");

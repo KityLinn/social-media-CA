@@ -1,9 +1,11 @@
 import { urls } from "./module.mjs";
 var notfind = document.querySelector("#notfind");
+var page = 0;
 
 const getPosts = async (url) => {
+  var offset = page * 10;
   const token = localStorage.getItem("token");
-  const res = await fetch(url, {
+  const res = await fetch(url + "&offset=" + offset, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -28,20 +30,15 @@ function createPost(data) {
 			  <a href="./singlepost.html?id=${data.id}">Details</a>
 			</div>`;
 }
-var postsNumber = 10;
 
-getPosts(urls.posts(postsNumber));
+
+getPosts(urls.posts(10));
 
 const morePosts = document.querySelector("#more");
 morePosts.addEventListener("click", (e) => {
   e.preventDefault();
-  if (postsNumber == 100) {
-    more.style.display ="none";
-    more.disabled;
-  }
-  else {
-  getPosts(urls.posts((postsNumber += 10)));
- }
+  page++;
+  getPosts(urls.posts(10));
 
 });
 

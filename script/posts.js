@@ -22,14 +22,6 @@ const getPosts = async (url) => {
   }
   main.innerHTML = html;
 }
-const createPost = (data) => {
-  return `<div class="post">
-			  <h2>${data.title}</h2>
-			  <p>${data.body}</p>
-			  <button onclick="showDetails(${data.id})">Details</button>
-			  <a href="./singlepost.html?id=${data.id}">Details</a>
-			</div>`;
-}
 
 
 getPosts(urls.posts(10));
@@ -77,7 +69,7 @@ const searchFetch = async (value, url) => {
     main.innerHTML = "";
     var html = "";
     for (var i = 0; i < searchData.length; i++) {
-      html += createSearchPost(searchData[i]);
+      html += createPost(searchData[i]);
     }
     main.innerHTML = html;
   };
@@ -98,14 +90,15 @@ function filter() {
   getPosts(url);
 }
 */
-const createSearchPost = (searchDatas) => {
+const createPost = (data) => {
   return `<div class="post">
-        <h2>${searchDatas.title}</h2>
-        <p>${searchDatas.body}</p>
-        <button onclick="showDetails(${searchDatas.id})">Details</button>
-        <a href="./singlepost.html?id=${searchDatas.id}">Details</a>
-      </div>`;
-};
+			  <h2>${data.title}</h2>
+			  <p>${data.body}</p>
+			  <button onclick="showDetails(${data.id})">Details</button>
+			  <a href="./singlepost.html?id=${data.id}">Details</a>
+			</div>`;
+}
+
 /*
 var tags= {};
 If (tags[newTag]){

@@ -9,6 +9,13 @@
 <body>
     <main>
         <div>
+            <select name="sort" id="">
+                <option selected disabled value="info">Sort by newest and oldest</option>
+                <option value="desc">Newest</option>
+                <option value="asc">oldest</option>
+            </select>
+        </div>
+        <div>
             <input type="text" name="search" id="search">
             <button type="submit" id="search-button">Click to search</button>
             <p id="notfind"></p>

@@ -22,3 +22,8 @@ main {
     grid-area: main;
     height: fit-content;
 }
+
+.nav {
+    width: 100%;
+    background-color: black;
+}

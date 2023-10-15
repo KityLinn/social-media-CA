@@ -97,13 +97,15 @@ const createPost = (data) => {
 			  <button onclick="showDetails(${data.id})">Details</button>
 			  <a href="./singlepost.html?id=${data.id}">Details</a>
 			</div>`;
-}
+};
 
-/*
-var tags= {};
-If (tags[newTag]){
-    Tags[newtag]++
-} else {
-    Tags[newtag] = 1;
-}
-*/
+var sorting = document.querySelector("#sorting")
+
+sorting.addEventListener("change", (e) => {
+  if (e.value == "desc") {
+
+  }
+  if (e.value == "asc" ) {
+    
+  }
+})

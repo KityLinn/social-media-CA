@@ -22,7 +22,7 @@ const getPosts = async (url) => {
   }
   main.innerHTML = html;
 }
-function createPost(data) {
+const createPost = (data) => {
   return `<div class="post">
 			  <h2>${data.title}</h2>
 			  <p>${data.body}</p>

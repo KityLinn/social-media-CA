@@ -1,2 +1,17 @@
 @import 'root.css';
 
+.login-section {
+    margin-top: 20vh;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 20px;
+    border: solid black 2px;
+}

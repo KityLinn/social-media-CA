@@ -3,3 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    display: grid;
+    grid-template-areas: 
+    'head'
+    'main'
+    'footer';
+    height: fit-content;
+}
+
+header {
+    grid-area: head;
+
+}
+
+main {
+    grid-area: main;
+    height: fit-content;
+}

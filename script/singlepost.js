@@ -4,6 +4,12 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
+/**
+ * fetches with the provided url and renders out a single post
+ * also creates delete and edit buttons
+ * @param {*} url 
+ */
+
 const getPosts = async (url) => {
 	const token = localStorage.getItem("token");
 	const res = await fetch(url, {
@@ -31,6 +37,11 @@ const getPosts = async (url) => {
 }
 
 getPosts(urls.post(id))
+/**
+ * creates deleteButton variable and an onclick event
+ * the even then triggers the delePost function using a url with the ID provided
+ * @param {number} id 
+ */
 
 const deleteButtonFunc = (id) => {
 	const deleteButton = document.querySelector("#delete");
@@ -40,7 +51,10 @@ const deleteButtonFunc = (id) => {
 		
 	});	
 }
-
+/**
+ * deletes the current post based on the ID in the link
+ * @param {number} deleteLink 
+ */
 const deletePost = async (deleteLink) => {
 	const token = localStorage.getItem("token");
 	const res = await fetch(deleteLink , {
@@ -51,7 +65,7 @@ const deletePost = async (deleteLink) => {
 		},
 	});
 	const data = await res.json();
-	console.log(data);
+
 	if (data.errors) {
 		const error = document.querySelector("#error")
 		error.innerHTML = "you do no have permission to delete"
@@ -61,6 +75,11 @@ const deletePost = async (deleteLink) => {
 	}
 }
 
+/**
+ * creates editButton variable and attaches click event to it.
+ * the click even then sends you to the editpost html page with the id
+ * @param {number} id 
+ */
 const editButtonFunc = (id) => {
 	const editButton = document.querySelector("#edit");
 	editButton.addEventListener("click", (e) => {

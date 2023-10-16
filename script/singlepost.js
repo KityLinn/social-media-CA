@@ -22,6 +22,7 @@ const getPosts = async (url) => {
       <h2>${title}</h2>
       <p>${body}</p>
 	  <button id="delete">Delete Post</button>
+	  <p id="error"></p>
 	  <button id="edit">Edit Post</button>
     </div>`;
 	deleteButtonFunc(id)
@@ -51,7 +52,13 @@ const deletePost = async (deleteLink) => {
 	});
 	const data = await res.json();
 	console.log(data);
-	window.location.href = "./posts.html"	
+	if (data.errors[0]) {
+		const error = document.querySelector("#error")
+		error.innerHTML = "you do no have permission to delete"
+	}
+	else {
+		window.location.href = "./posts.html"
+	}
 }
 
 const editButtonFunc = (id) => {
@@ -62,3 +69,13 @@ const editButtonFunc = (id) => {
 	
 	});	
 }
+
+/*
+	if (data.errors[0]) {
+		console.log("you do not have permission")
+	}
+	else {
+		window.location.href = "./posts.html"
+	}
+	console.log();
+	*/

@@ -17,14 +17,16 @@ const getPosts = async (url) => {
 	console.log(data);
 	var main = document.querySelector("#posts");
 	main.innerHTML = "";
+	var {title, body, id} = data;
 	  main.innerHTML +=`<div class="post">
-      <h2>${data.title}</h2>
-      <p>${data.body}</p>
+      <h2>${title}</h2>
+      <p>${body}</p>
 	  <button id="delete">Delete Post</button>
 	  <button id="edit">Edit Post</button>
     </div>`;
-	deleteButtonFunc(data.id)
-	editButtonFunc(data.id)
+	deleteButtonFunc(id)
+	editButtonFunc(id)
+	document.title = title;
 }
 
 getPosts(urls.post(id))

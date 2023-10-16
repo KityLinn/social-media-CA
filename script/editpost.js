@@ -19,7 +19,6 @@ const getEdit = async (url) => {
 		},
 	});
 	const data = await res.json();
-	console.log(data);
   var {title, body} = data;
 	var main = document.querySelector("#posts");
 	main.innerHTML = "";
@@ -52,13 +51,13 @@ postEdit.addEventListener("click", (e) => {
 
     editPost(urls.editPost(id), post)
 });
+
 /**
  * fetches using hte provided URL and sends the object data to the API
  * also has error message if the user is not allowed to edit this post
  * @param {string} editURL 
  * @param {object} postData 
  */
-
 const editPost = async (editURL, postData) => {
     const token = localStorage.getItem("token");
     const res = await fetch (editURL, {
@@ -70,7 +69,6 @@ const editPost = async (editURL, postData) => {
         body: JSON.stringify(postData),
     });
     const data = await res.json();
-	console.log(data);
   if (data.errors) {
 		const error = document.querySelector("#error")
 		error.innerHTML = "you do no have permission to edit this post"

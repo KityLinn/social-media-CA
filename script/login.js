@@ -12,7 +12,6 @@ logIn.addEventListener("click", (e) => {
         password: logPassword.value,
         email: logemail.value,
     };
-
     loginFunc(urls.login, userLogin)
 });
 
@@ -32,7 +31,6 @@ logIn.addEventListener("click", (e) => {
         body: JSON.stringify(userData),
     });
     const data = await res.json();
-	console.log(data);
 	localStorage.setItem("token", data.accessToken);
     window.location.href = "./posts.html"
 

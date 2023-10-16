@@ -40,7 +40,6 @@ const registerFunc = async (registerURL, userData) => {
         errorsDiv.innerHTML = ""
         var errorContainer = ""
         for (var i = 0; i < data.errors.length; i++) {
-            console.log(data.errors[i])
             errorContainer += createError(data.errors[i])
           }
           errorsDiv.innerHTML = errorContainer;
@@ -67,15 +66,13 @@ const regiLogin = async (url, loginData) => {
         body: JSON.stringify(loginData),
     });
     const data = await res.json();
-    
-	console.log(data);
 	localStorage.setItem("token", data.accessToken);
     window.location.href = "./posts.html"
 }
 /**
  * handles the data from the error and returns a p with the error message
  * @param {Array} data 
- * @returns 
+ * @returns string html
  */
 const createError = (data) => {
     return `<p id="error">${data.message}</p>`

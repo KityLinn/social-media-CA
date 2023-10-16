@@ -1,11 +1,11 @@
 import { urls } from "./module.mjs";
 var notfind = document.querySelector("#notfind");
 var page = 0;
+
 /**
  * fetches based off a url and runs CreatePost function with the data
  * @param {string} url 
  */
-
 const getPosts = async (url) => {
   var offset = page * 10;
   const token = localStorage.getItem("token");

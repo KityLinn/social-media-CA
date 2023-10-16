@@ -10,7 +10,6 @@ postSubmit.addEventListener("click", (e) => {
         title: postTitle.value,
         body: postContent.value,
     };
-
     createPost(urls.createPost, post)
 });
 
@@ -31,7 +30,6 @@ const createPost = async (createURL, postData) => {
         body: JSON.stringify(postData),
     });
     const data = await res.json();
-	console.log(data);
     window.location.href = "./posts.html"
 
 

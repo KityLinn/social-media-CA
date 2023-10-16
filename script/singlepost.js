@@ -20,7 +20,6 @@ const getPosts = async (url) => {
 		},
 	});
 	const data = await res.json();
-	console.log(data);
 	var main = document.querySelector("#posts");
 	main.innerHTML = "";
 	var {title, body, id} = data;
@@ -37,12 +36,12 @@ const getPosts = async (url) => {
 }
 
 getPosts(urls.post(id))
+
 /**
  * creates deleteButton variable and an onclick event
  * the even then triggers the delePost function using a url with the ID provided
  * @param {number} id 
  */
-
 const deleteButtonFunc = (id) => {
 	const deleteButton = document.querySelector("#delete");
 	deleteButton.addEventListener("click", (e) => {
@@ -51,6 +50,7 @@ const deleteButtonFunc = (id) => {
 		
 	});	
 }
+
 /**
  * deletes the current post based on the ID in the link
  * @param {number} deleteLink 
@@ -85,16 +85,5 @@ const editButtonFunc = (id) => {
 	editButton.addEventListener("click", (e) => {
 		e.preventDefault
 		window.location.href = `./editpost.html?id=${id}`
-	
 	});	
 }
-
-/*
-	if (data.errors[0]) {
-		console.log("you do not have permission")
-	}
-	else {
-		window.location.href = "./posts.html"
-	}
-	console.log();
-	*/

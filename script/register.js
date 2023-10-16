@@ -21,7 +21,11 @@ register.addEventListener("click", (e) => {
 })
 
 
-
+/**
+ * fetches using the provided URL. Sends the object data to the API and reuests a user be created
+ * @param {string} registerURL 
+ * @param {object} userData 
+ */
 
 const registerFunc = async (registerURL, userData) => {
     const res = await fetch (registerURL, {
@@ -47,7 +51,13 @@ const registerFunc = async (registerURL, userData) => {
     }
     
 }
-
+/**
+ * Works similarly to login function.
+ * Triggers if user registration is succesful and automatically logs them in and sends them to posts page
+ * uses the login URL and the same object as registration function
+ * @param {strong} url 
+ * @param {object} loginData 
+ */
 const regiLogin = async (url, loginData) => {
     const res = await fetch (url, {
         method: "post",
@@ -62,7 +72,11 @@ const regiLogin = async (url, loginData) => {
 	localStorage.setItem("token", data.accessToken);
     window.location.href = "./posts.html"
 }
-
+/**
+ * handles the data from the error and returns a p with the error message
+ * @param {Array} data 
+ * @returns 
+ */
 const createError = (data) => {
     return `<p id="error">${data.message}</p>`
 }

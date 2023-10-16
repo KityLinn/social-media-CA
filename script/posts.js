@@ -1,6 +1,10 @@
 import { urls } from "./module.mjs";
 var notfind = document.querySelector("#notfind");
 var page = 0;
+/**
+ * fetches based off a url and runs CreatePost function with the data
+ * @param {string} url 
+ */
 
 const getPosts = async (url) => {
   var offset = page * 10;
@@ -40,10 +44,21 @@ searchButton.addEventListener("click", (e) => {
   e.preventDefault();
   searchFunc(search.value.toLowerCase(), urls.search);
 });
+/**
+ * sends teh serch value and search url into a searchfetch function
+ * @param {string} searchValue 
+ * @param {string} searchURL 
+ */
 
 const searchFunc = (searchValue, searchURL) => {
   searchFetch(searchValue, searchURL);
 };
+/**
+ * fetches with a privided url and then filters the data
+ * @param {string} value 
+ * @param {string} url 
+ */
+
 const searchFetch = async (value, url) => {
   const token = localStorage.getItem("token");
   const res = await fetch(url, {
@@ -90,6 +105,11 @@ function filter() {
   getPosts(url);
 }
 */
+/**
+ * renders out a div with the content provided in data
+ * @param {Array} data 
+ * @returns 
+ */
 const createPost = (data) => {
   var {title, body, id} = data;
   return `<div class="post">
@@ -112,6 +132,12 @@ sorting.addEventListener("change", (e) => {
     
   }
 })
+/**
+ * uses the provided url and sort value to sort the content from either newest to oldest or oldest to newest
+ * then runs a rendering functions at the end for each of them
+ * @param {string} url 
+ * @param {string} sortValue 
+ */
 
 const sortFunc = async (url, sortValue) => {
   const token = localStorage.getItem("token");

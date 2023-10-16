@@ -4,7 +4,11 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-
+/**
+ * fetches data based on a url with an ID.
+ * Then renders out the content into a single post into two input fields
+ * @param {string} url 
+ */
 const getEdit = async (url) => {
 	const token = localStorage.getItem("token");
 	const res = await fetch(url, {
@@ -48,7 +52,12 @@ postEdit.addEventListener("click", (e) => {
 
     editPost(urls.editPost(id), post)
 });
-
+/**
+ * fetches using hte provided URL and sends the object data to the API
+ * also has error message if the user is not allowed to edit this post
+ * @param {string} editURL 
+ * @param {object} postData 
+ */
 
 const editPost = async (editURL, postData) => {
     const token = localStorage.getItem("token");

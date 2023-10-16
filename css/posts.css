@@ -19,6 +19,19 @@
     width: 300px;
     max-width: 300px;
     border: solid black 2px;
+}
 
+#search-button {
+    padding: 3px;
+}
+#search {
+    padding: 3px;
+}
 
+#sorting {
+    padding: 3px;
+}
+
+#more {
+    padding: 3px;
 }

@@ -71,6 +71,7 @@ const searchFetch = async (value, url) => {
       html += createPost(searchData[i]);
     }
     main.innerHTML = html;
+    
   };
 
   };

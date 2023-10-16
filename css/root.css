@@ -18,6 +18,14 @@ header {
 
 }
 
+.header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-bottom: solid black 2px;
+}
+
 main {
     grid-area: main;
     height: fit-content;
@@ -25,5 +33,4 @@ main {
 
 .nav {
     width: 100%;
-    background-color: black;
 }

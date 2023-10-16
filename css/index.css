@@ -28,3 +28,9 @@
 .login-form button {
     padding: 3px;
 }
+
+.login-div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

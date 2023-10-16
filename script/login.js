@@ -4,6 +4,7 @@ const logIn = document.querySelector("#login");
 const logUsername = document.querySelector("#login-name");
 const logPassword = document.querySelector("#login-password");
 const logemail = document.querySelector("#login-email")
+const errorsDiv = document.querySelector("#errors-div");
 
 logIn.addEventListener("click", (e) => {
     e.preventDefault()
@@ -31,11 +32,27 @@ logIn.addEventListener("click", (e) => {
         body: JSON.stringify(userData),
     });
     const data = await res.json();
-	localStorage.setItem("token", data.accessToken);
-    window.location.href = "./posts.html"
+    if (data.errors) {
+        errorsDiv.innerHTML = ""
+        var errorContainer = ""
+        for (var i = 0; i < data.errors.length; i++) {
+            errorContainer += createError(data.errors[i])
+          }
+          errorsDiv.innerHTML = errorContainer;
+    }
+    else {
+        regiLogin(urls.login, userData);
+        localStorage.setItem("token", data.accessToken);
+        window.location.href = "./posts.html"
+
+    }
+
 
 }
 
+const createError = (data) => {
+    return `<p id="error">${data.message}</p>`
+}
 
 /* Username: Linn2
 Email:Linn2@noroff.no

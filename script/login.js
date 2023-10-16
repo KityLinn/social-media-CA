@@ -18,7 +18,11 @@ logIn.addEventListener("click", (e) => {
 
 
 
-
+/**
+ * fetches using the provided URL. Sends the object data to the API and makes a login request
+ * @param {string} loginURL 
+ * @param {object} userData 
+ */
  const loginFunc = async (loginURL, userData) => {
     const res = await fetch (loginURL, {
         method: "post",

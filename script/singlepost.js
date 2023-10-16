@@ -52,7 +52,7 @@ const deletePost = async (deleteLink) => {
 	});
 	const data = await res.json();
 	console.log(data);
-	if (data.errors[0]) {
+	if (data.errors) {
 		const error = document.querySelector("#error")
 		error.innerHTML = "you do no have permission to delete"
 	}

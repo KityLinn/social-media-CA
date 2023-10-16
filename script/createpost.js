@@ -15,7 +15,11 @@ postSubmit.addEventListener("click", (e) => {
 });
 
 
-
+/**
+ * fetches based on the provided URL and sends the data to the API that creates a new post
+ * @param {string} createURL 
+ * @param {object} postData 
+ */
 const createPost = async (createURL, postData) => {
     const token = localStorage.getItem("token");
     const res = await fetch (createURL, {

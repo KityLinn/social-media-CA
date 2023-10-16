@@ -90,11 +90,12 @@ function filter() {
 }
 */
 const createPost = (data) => {
+  var {title, body, id} = data;
   return `<div class="post">
-			  <h2>${data.title}</h2>
-			  <p>${data.body}</p>
-			  <button onclick="showDetails(${data.id})">Details</button>
-			  <a href="./singlepost.html?id=${data.id}">Details</a>
+			  <h2>${title}</h2>
+			  <p>${body}</p>
+			  <button onclick="showDetails(${id})">Details</button>
+			  <a href="./singlepost.html?id=${id}">Details</a>
 			</div>`;
 };
 

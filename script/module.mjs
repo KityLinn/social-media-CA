@@ -10,3 +10,5 @@ export const urls = {
     editPost: (id) => BASE_URL + `social/posts/${id}`,
     search: BASE_URL + "social/posts",
   };
+
+  

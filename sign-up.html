@@ -5,26 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CA main</title>
     <script type="module" src="./script/register.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
+  <header>
+    <div class="header-title">
+      <h1>Welcome to the Noroff social media page</h1>
+    </div>
+  </header>
 
-    <form>
-      Register new user
-      <div class="form-outline">
-        <input type="text" id="name-1" />
-        <label class="form-label" for="name-1">User name</label>
+<main>
+  <section class="login-section">
+    <h2>Sign up</h2>
+    <form class="login-form">
+      <div>
+        <input type="text" id="singup-name" name="name"/>
+        <label class="form-label" for="singup-name">User name</label>
       </div>
-        <div class="form-outline">
-          <input type="email" id="email-1"/>
-          <label class="form-label" for="email-1">Email address</label>
-        </div>
-        <div class="form-outline">
-          <input type="password" id="password-1"  pattern="(?=.[a-zA-Z0-9]).{8,}" required/>
-          <label class="form-label" for="password-1">Password</label>
-        </div>
-        <div>
-          <button type="submit" id="Sign-up">Sign-up</button>
-        </div>
-      </form>
+      <div>
+        <input type="email" id="signup-email" name="email" />
+        <label class="form-label" for="signup-email">email</label>
+      </div>
+      <div>
+        <input type="password" id="signup-password" name="password" />
+        <label class="form-label" for="signup-password">Password</label>
+      </div>
+      <div>
+        <button type="submit" id="Signup">Sign up</button>
+      </div>
+    </form>
+  </section>
+</main>
+
 </body>
 </html>

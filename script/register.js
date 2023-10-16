@@ -54,8 +54,8 @@ const registerFunc = async (registerURL, userData) => {
  * Works similarly to login function.
  * Triggers if user registration is succesful and automatically logs them in and sends them to posts page
  * uses the login URL and the same object as registration function
- * @param {strong} url 
- * @param {object} loginData 
+ * @param {string} url 
+ * @param {Object} loginData 
  */
 const regiLogin = async (url, loginData) => {
     const res = await fetch (url, {
@@ -71,7 +71,7 @@ const regiLogin = async (url, loginData) => {
 }
 /**
  * handles the data from the error and returns a p with the error message
- * @param {Array} data 
+ * @param {Object} data 
  * @returns string html
  */
 const createError = (data) => {

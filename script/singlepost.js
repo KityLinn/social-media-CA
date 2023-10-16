@@ -7,7 +7,7 @@ const id = params.get("id");
 /**
  * fetches with the provided url and renders out a single post
  * also creates delete and edit buttons
- * @param {*} url 
+ * @param {string} url 
  */
 
 const getPosts = async (url) => {
@@ -53,7 +53,7 @@ const deleteButtonFunc = (id) => {
 
 /**
  * deletes the current post based on the ID in the link
- * @param {number} deleteLink 
+ * @param {string} deleteLink 
  */
 const deletePost = async (deleteLink) => {
 	const token = localStorage.getItem("token");

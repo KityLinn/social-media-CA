@@ -4,26 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="./script/posts.js"></script>
+    <link rel="stylesheet" href="./css/posts.css">
     <title>Posts</title>
 </head>
 <body>
+    <header>
+        <div class="header-title">
+          <h1>Welcome to the Noroff social media page</h1>
+        </div>
+      </header>
     <main>
-        <div>
-            <select name="sort" id="sorting">
-                <option selected disabled value="info">Sort by newest and oldest</option>
-                <option value="desc">Newest</option>
-                <option value="asc">oldest</option>
-            </select>
-        </div>
-        <div>
-            <input type="text" name="search" id="search">
-            <button type="submit" id="search-button">Click to search</button>
-            <p id="notfind"></p>
-        </div>
-        <div id="posts"></div>
-        <div>
-            <button type="submit" id="more">More posts button
-        </div>
+        <section class="posts-section">
+            <div class="feed-title">
+                <h2>Check out the posts feed</h2>
+              </div>
+
+            <div>
+                <select name="sort" id="sorting">
+                    <option selected disabled value="info">Sort by newest and oldest</option>
+                    <option value="desc">Newest</option>
+                    <option value="asc">oldest</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" name="search" id="search">
+                <button type="submit" id="search-button">Click to search</button>
+                <p id="notfind"></p>
+            </div>
+            <div id="posts"></div>
+            <div>
+                <button type="submit" id="more">More posts button
+            </div>
+
+        </section>
+
 
     </main>
                 

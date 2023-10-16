@@ -38,7 +38,7 @@ const searchButton = document.querySelector("#search-button");
 
 searchButton.addEventListener("click", (e) => {
   e.preventDefault();
-  searchFunc(search.value, urls.search);
+  searchFunc(search.value.toLowerCase(), urls.search);
 });
 
 const searchFunc = (searchValue, searchURL) => {
@@ -95,7 +95,6 @@ const createPost = (data) => {
   return `<div class="post">
 			  <h2>${title}</h2>
 			  <p>${body}</p>
-			  <button onclick="showDetails(${id})">Details</button>
 			  <a href="./singlepost.html?id=${id}">Details</a>
 			</div>`;
 };

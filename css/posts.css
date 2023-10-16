@@ -1,1 +1,24 @@
 @import 'root.css';
+
+.posts-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 5vh;
+}
+
+#posts {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.post {
+    width: 300px;
+    max-width: 300px;
+    border: solid black 2px;
+
+
+}

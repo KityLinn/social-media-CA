@@ -19,6 +19,7 @@
     width: 300px;
     max-width: 300px;
     border: solid black 2px;
+    padding: 20px;
 }
 
 #search-button {

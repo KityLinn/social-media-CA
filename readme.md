@@ -5,8 +5,8 @@ filter oldest + more posts gir nyeste posts
 login info i login script
  
 viser ikke media
-viser ikke author
-ingen mulighet for å gå profiler 
+viser ikke author x
+ingen mulighet for å gå profiler x
 delete og edit er tilgjengelig på alle poster  X
 endre hvor man blir sendt etter edit X
 brukt “var” i koden "let" X

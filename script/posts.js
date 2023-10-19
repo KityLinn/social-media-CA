@@ -1,6 +1,7 @@
 import { urls } from "./module.mjs";
 let notfind = document.querySelector("#notfind");
 let page = 0;
+let sortValue = "desc"
 
 /**
  * fetches based off a url and runs CreatePost function with the data
@@ -9,7 +10,7 @@ let page = 0;
 const getPosts = async (url) => {
   let offset = page * 10;
   const token = localStorage.getItem("token");
-  const res = await fetch(url + "&offset=" + offset, {
+  const res = await fetch(url + "&offset=" + offset + "&sort=created" + "&sortOrder=" + sortValue, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -34,6 +35,7 @@ const morePosts = document.querySelector("#more");
 morePosts.addEventListener("click", (e) => {
   e.preventDefault();
   page++;
+  console.log(page)
   getPosts(urls.posts(10));
 
 });
@@ -125,40 +127,17 @@ const createPost = (data) => {
 let sorting = document.querySelector("#sorting")
 
 sorting.addEventListener("change", (e) => {
-  console.log(e.target.value)
   if (e.target.value == "desc") {
-    sortFunc(urls.search, e.target.value)
-
+    sortValue = "desc";
+    page = 0;
+    getPosts(urls.posts(10));
+    
+    
   }
   if (e.target.value == "asc" ) {
-    sortFunc(urls.search, e.target.value)
+    sortValue = "asc";
+    page = 0
+    getPosts(urls.posts(10));
     
   }
 })
-/**
- * uses the provided url and sort value to sort the content from either newest to oldest or oldest to newest
- * then runs a rendering functions at the end for each of them
- * @param {string} url 
- * @param {string} sortValue 
- */
-
-const sortFunc = async (url, sortValue) => {
-  const token = localStorage.getItem("token");
-  const res = await fetch(url + "?sort=created" + "&sortOrder=" + sortValue, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  const data = await res.json();
-  console.log(data)
-  let main = document.querySelector("#posts");
-  main.innerHTML = "";
-  let html = "";
-  for (let i = 0; i < data.length; i++) {
-    html += createPost(data[i]);
-  }
-  main.innerHTML = html;
-
-}

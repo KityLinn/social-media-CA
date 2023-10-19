@@ -1,7 +1,6 @@
 import { urls } from "./module.mjs";
 
 const logIn = document.querySelector("#login");
-const logUsername = document.querySelector("#login-name");
 const logPassword = document.querySelector("#login-password");
 const logemail = document.querySelector("#login-email")
 const errorsDiv = document.querySelector("#errors-div");
@@ -9,7 +8,6 @@ const errorsDiv = document.querySelector("#errors-div");
 logIn.addEventListener("click", (e) => {
     e.preventDefault()
     const userLogin = {
-        username: logUsername.value,
         password: logPassword.value,
         email: logemail.value,
     };
@@ -41,7 +39,6 @@ logIn.addEventListener("click", (e) => {
           errorsDiv.innerHTML = errorContainer;
     }
     else {
-        regiLogin(urls.login, userData);
         localStorage.setItem("token", data.accessToken);
         window.location.href = "./posts.html"
 

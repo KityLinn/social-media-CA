@@ -51,7 +51,3 @@ logIn.addEventListener("click", (e) => {
 const createError = (data) => {
     return `<p id="error">${data.message}</p>`
 }
-
-/* Username: Linn2
-Email:Linn2@noroff.no
-password: blipblopbloop102*/

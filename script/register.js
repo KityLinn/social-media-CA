@@ -78,7 +78,3 @@ const regiLogin = async (url, loginData) => {
 const createError = (data) => {
     return `<p id="error">${data.message}</p>`
 }
-/* test user
-name: testKit2
-email: testKit2@noroff.no
-password: testtestybleh */

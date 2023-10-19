@@ -1,8 +1,8 @@
 login funker ikke X
 search gir console error X
-filter oldest + more posts gir nyeste posts
+filter oldest + more posts gir nyeste posts x
 “The client application must be attractive and responsive”
-login info i login script
+login info i login script x
  
 viser ikke media
 viser ikke author x

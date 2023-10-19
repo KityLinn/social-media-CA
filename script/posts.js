@@ -17,6 +17,7 @@ const getPosts = async (url) => {
     },
   });
   const data = await res.json();
+  console.log(data)
   let main = document.querySelector("#posts");
   main.innerHTML = "";
   let html = "";
@@ -112,11 +113,12 @@ function filter() {
  * @returns 
  */
 const createPost = (data) => {
-  let {title, body, id} = data;
+  let {title, body, id, author} = data;
   return `<div class="post">
 			  <h2>${title}</h2>
 			  <p>${body}</p>
 			  <a href="./singlepost.html?id=${id}">Details</a>
+        <a href="./author.html?author=${author.name}">${author.name}</a>
 			</div>`;
 };
 

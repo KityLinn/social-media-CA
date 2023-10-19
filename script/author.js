@@ -36,7 +36,7 @@ const createPost = (data) => {
                 <h2>${title}</h2>
                 <p>${body}</p>
                 <a href="./singlepost.html?id=${id}">Details</a>
-          <a href="./author.html?author=${author.name}">${author.name}</a>
+                <p>${author.name}</p>
               </div>`;
   };
   

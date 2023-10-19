@@ -13,7 +13,6 @@ const id = params.get("id");
 const getPosts = async (url) => {
 	const token = localStorage.getItem("token");
 	const user = localStorage.getItem("author")
-	console.log(author)
 	const res = await fetch(url, {
 		method: "GET",
 		headers: {
@@ -22,7 +21,6 @@ const getPosts = async (url) => {
 		},
 	});
 	const data = await res.json();
-	console.log(data);
 	let main = document.querySelector("#posts");
 	main.innerHTML = "";
 	let {title, body, id, author} = data;
@@ -57,7 +55,6 @@ const deleteButtonFunc = (id) => {
 	deleteButton.addEventListener("click", (e) => {
 		e.preventDefault
 		deletePost(urls.delete(id))
-		
 	});	
 }
 

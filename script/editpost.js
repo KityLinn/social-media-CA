@@ -19,7 +19,7 @@ const getEdit = async (url) => {
 		},
 	});
 	const data = await res.json();
-  let {title, body} = data;
+  let {title, body, media} = data;
 	let main = document.querySelector("#posts");
 	main.innerHTML = "";
 	  main.innerHTML += `
@@ -31,6 +31,11 @@ const getEdit = async (url) => {
   <div class="create-div">
     <label class="form-label" for="post-content">Your post content</label>
     <textarea name="content" id="post-content" cols="30" rows="10">${body}</textarea>
+  </div>
+
+  <div class="create-div">
+    <label class="form-label" for="post-image">Post image link</label>
+    <input type="text" id="post-image" name="image" value =${media}/>
   </div>
 
   <div class="create-div">

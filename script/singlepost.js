@@ -23,16 +23,8 @@ const getPosts = async (url) => {
 	const data = await res.json();
 	let main = document.querySelector("#posts");
 	main.innerHTML = "";
-	let {title, body, id, author, media} = data;
-	  main.innerHTML +=
-	  `<div class="post">
-	  <h2>${title}</h2>
-      <div class="image">
-         <img src="${media}" alt="${title}">
-      </div>
-	  <p>${body}</p>
-	  <p>${author.name}</p>
-	</div>`;
+	let {title, id, author,} = data;
+	  main.innerHTML += createPost(data)
 	document.title = title;
 	if (author.name === user) {
 		main.innerHTML += `
@@ -91,3 +83,23 @@ const editButtonFunc = (id) => {
 	});	
 }
 
+
+const createPost = (data) => {
+	let {title, body, id, author, media} = data;
+	if (!media) {
+	  return`<div class="post">
+	  <h2>${title}</h2>
+	  <p>${body}</p>
+	  <p>${author.name}</p>
+	  </div>`;
+	} else {
+	  return`<div class="post">
+	  <h2>${title}</h2>
+	  <div class="image">
+		 <img src="${media}" alt="${title}">
+	  </div>
+	  <p>${body}</p>
+	  <p>${author.name}</p>
+	  </div>`;;
+	}
+	};

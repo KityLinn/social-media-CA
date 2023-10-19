@@ -69,10 +69,11 @@ const searchFetch = async (value, url) => {
     },
   });
   const data = await res.json();
+  console.log(data)
   const searchData = data.filter(
     (e) =>
-      e.body.toLowerCase().includes(value) ||
-      e.title.toLowerCase().includes(value)
+      e.body?.toLowerCase().includes(value) ||
+      e.title?.toLowerCase().includes(value)
   );
 
   if (searchData.length == 0) {

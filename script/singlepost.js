@@ -23,9 +23,9 @@ const getPosts = async (url) => {
 	});
 	const data = await res.json();
 	console.log(data);
-	var main = document.querySelector("#posts");
+	let main = document.querySelector("#posts");
 	main.innerHTML = "";
-	var {title, body, id, author} = data;
+	let {title, body, id, author} = data;
 	  main.innerHTML +=`<div class="post">
       <h2>${title}</h2>
       <p>${body}</p>

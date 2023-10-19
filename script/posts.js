@@ -1,13 +1,13 @@
 import { urls } from "./module.mjs";
-var notfind = document.querySelector("#notfind");
-var page = 0;
+let notfind = document.querySelector("#notfind");
+let page = 0;
 
 /**
  * fetches based off a url and runs CreatePost function with the data
  * @param {string} url 
  */
 const getPosts = async (url) => {
-  var offset = page * 10;
+  let offset = page * 10;
   const token = localStorage.getItem("token");
   const res = await fetch(url + "&offset=" + offset, {
     method: "GET",
@@ -17,10 +17,10 @@ const getPosts = async (url) => {
     },
   });
   const data = await res.json();
-  var main = document.querySelector("#posts");
+  let main = document.querySelector("#posts");
   main.innerHTML = "";
-  var html = "";
-  for (var i = 0; i < data.length; i++) {
+  let html = "";
+  for (let i = 0; i < data.length; i++) {
     html += createPost(data[i]);
   }
   main.innerHTML = html;
@@ -80,10 +80,10 @@ const searchFetch = async (value, url) => {
     notfind.innerHTML = "could not find"
   } else {
     notfind.innerHTML = ""
-    var main = document.querySelector("#posts");
+    let main = document.querySelector("#posts");
     main.innerHTML = "";
-    var html = "";
-    for (var i = 0; i < searchData.length; i++) {
+    let html = "";
+    for (let i = 0; i < searchData.length; i++) {
       html += createPost(searchData[i]);
     }
     main.innerHTML = html;
@@ -94,9 +94,9 @@ const searchFetch = async (value, url) => {
 
 /*
 function filter() {
-  var tag = document.querySelector("#tag-search").value;
-  var active = document.querySelector("#active-check").checked;
-  var url = urls.posts;
+  let tag = document.querySelector("#tag-search").value;
+  let active = document.querySelector("#active-check").checked;
+  let url = urls.posts;
   if (tag) {
     url += "&_tag=" + tag;
   }
@@ -112,7 +112,7 @@ function filter() {
  * @returns 
  */
 const createPost = (data) => {
-  var {title, body, id} = data;
+  let {title, body, id} = data;
   return `<div class="post">
 			  <h2>${title}</h2>
 			  <p>${body}</p>
@@ -120,7 +120,7 @@ const createPost = (data) => {
 			</div>`;
 };
 
-var sorting = document.querySelector("#sorting")
+let sorting = document.querySelector("#sorting")
 
 sorting.addEventListener("change", (e) => {
   console.log(e.target.value)
@@ -151,10 +151,10 @@ const sortFunc = async (url, sortValue) => {
   });
   const data = await res.json();
   console.log(data)
-  var main = document.querySelector("#posts");
+  let main = document.querySelector("#posts");
   main.innerHTML = "";
-  var html = "";
-  for (var i = 0; i < data.length; i++) {
+  let html = "";
+  for (let i = 0; i < data.length; i++) {
     html += createPost(data[i]);
   }
   main.innerHTML = html;

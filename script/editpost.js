@@ -19,8 +19,8 @@ const getEdit = async (url) => {
 		},
 	});
 	const data = await res.json();
-  var {title, body} = data;
-	var main = document.querySelector("#posts");
+  let {title, body} = data;
+	let main = document.querySelector("#posts");
 	main.innerHTML = "";
 	  main.innerHTML += `
   <div class="create-div">

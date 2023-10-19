@@ -38,8 +38,8 @@ const registerFunc = async (registerURL, userData) => {
     const data = await res.json();
     if (data.errors) {
         errorsDiv.innerHTML = ""
-        var errorContainer = ""
-        for (var i = 0; i < data.errors.length; i++) {
+        let errorContainer = ""
+        for (let i = 0; i < data.errors.length; i++) {
             errorContainer += createError(data.errors[i])
           }
           errorsDiv.innerHTML = errorContainer;

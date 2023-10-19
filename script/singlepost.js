@@ -12,6 +12,8 @@ const id = params.get("id");
 
 const getPosts = async (url) => {
 	const token = localStorage.getItem("token");
+	const user = localStorage.getItem("author")
+	console.log(author)
 	const res = await fetch(url, {
 		method: "GET",
 		headers: {
@@ -20,21 +22,29 @@ const getPosts = async (url) => {
 		},
 	});
 	const data = await res.json();
+	console.log(data);
 	var main = document.querySelector("#posts");
 	main.innerHTML = "";
-	var {title, body, id} = data;
+	var {title, body, id, author} = data;
 	  main.innerHTML +=`<div class="post">
       <h2>${title}</h2>
       <p>${body}</p>
-	  <button id="delete">Delete Post</button>
-	  <p id="error"></p>
-	  <button id="edit">Edit Post</button>
+	  <p>${author.name}</p>
     </div>`;
-	deleteButtonFunc(id)
-	editButtonFunc(id)
 	document.title = title;
-}
+	if (author.name === user) {
+		main.innerHTML += `
+		<button id="delete">Delete Post</button>
+		<p id="error"></p>
+		<button id="edit">Edit Post</button>`
+		deleteButtonFunc(id)
+		editButtonFunc(id)
+	}
+	else {
 
+	}
+
+}
 getPosts(urls.post(id))
 
 /**
@@ -65,14 +75,6 @@ const deletePost = async (deleteLink) => {
 		},
 	});
 	const data = await res.json();
-
-	if (data.errors) {
-		const error = document.querySelector("#error")
-		error.innerHTML = "you do no have permission to delete"
-	}
-	else {
-		window.location.href = "./posts.html"
-	}
 }
 
 /**
@@ -87,3 +89,4 @@ const editButtonFunc = (id) => {
 		window.location.href = `./editpost.html?id=${id}`
 	});	
 }
+

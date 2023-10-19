@@ -66,6 +66,7 @@ const regiLogin = async (url, loginData) => {
         body: JSON.stringify(loginData),
     });
     const data = await res.json();
+    localStorage.setItem("author", data.name)
 	localStorage.setItem("token", data.accessToken);
     window.location.href = "./posts.html"
 }

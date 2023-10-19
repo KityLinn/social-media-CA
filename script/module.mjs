@@ -9,8 +9,8 @@ export const urls = {
     createPost: BASE_URL + "social/posts",
     editPost: (id) => BASE_URL + `social/posts/${id}`,
     search: BASE_URL + "social/posts?_author=true&_comments=true&_reactions=true",
-    singleProfile: (name) => BASE_URL + `/social/profiles/${name}/posts?_author=true&_comments=true&_reactions=true`,
-    allprofiles: BASE_URL + "/social/profiles?_author=true&_comments=true&_reactions=true"
+    singleProfile: (name) => BASE_URL + `social/profiles/${name}/posts?_author=true&_comments=true&_reactions=true`,
+    allprofiles: BASE_URL + "social/profiles?_author=true&_comments=true&_reactions=true"
   };
 
   

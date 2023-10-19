@@ -115,9 +115,12 @@ function filter() {
  * @returns 
  */
 const createPost = (data) => {
-  let {title, body, id, author} = data;
+  let {title, body, id, author, media} = data;
   return `<div class="post">
 			  <h2>${title}</h2>
+        <div class="image">
+           <img src="${media}" alt="${title}">
+        </div>
 			  <p>${body}</p>
 			  <a href="./singlepost.html?id=${id}">Details</a>
         <a href="./author.html?author=${author.name}">${author.name}</a>

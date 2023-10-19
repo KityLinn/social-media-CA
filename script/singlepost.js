@@ -23,12 +23,16 @@ const getPosts = async (url) => {
 	const data = await res.json();
 	let main = document.querySelector("#posts");
 	main.innerHTML = "";
-	let {title, body, id, author} = data;
-	  main.innerHTML +=`<div class="post">
-      <h2>${title}</h2>
-      <p>${body}</p>
+	let {title, body, id, author, media} = data;
+	  main.innerHTML +=
+	  `<div class="post">
+	  <h2>${title}</h2>
+      <div class="image">
+         <img src="${media}" alt="${title}">
+      </div>
+	  <p>${body}</p>
 	  <p>${author.name}</p>
-    </div>`;
+	</div>`;
 	document.title = title;
 	if (author.name === user) {
 		main.innerHTML += `

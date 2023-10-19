@@ -17,3 +17,11 @@
     border: solid black 2px;
     padding: 20px;
 }
+.image {
+    max-width: 300px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}

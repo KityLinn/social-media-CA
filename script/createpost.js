@@ -30,7 +30,7 @@ const createPost = async (createURL, postData) => {
         body: JSON.stringify(postData),
     });
     const data = await res.json();
-    window.location.href = "./posts.html"
+    window.location.href = `./singlepost.html?id=${data.id}`
 
 
 }

@@ -69,14 +69,7 @@ const editPost = async (editURL, postData) => {
         body: JSON.stringify(postData),
     });
     const data = await res.json();
-  if (data.errors) {
-		const error = document.querySelector("#error")
-		error.innerHTML = "you do no have permission to edit this post"
-	}
-	else {
-		window.location.href = "./posts.html"
-	}
-
+    window.location.href = `./singlepost.html?id=${data.id}`
 }
 
 };

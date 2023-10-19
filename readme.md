@@ -9,8 +9,8 @@ viser ikke author
 ingen mulighet for å gå profiler
 delete og edit er tilgjengelig på alle poster  X
 endre hvor man blir sendt etter edit
-brukt “var” i koden "let"
+brukt “var” i koden "let" X
 
 gjøre det penere
 
-lagre author i local storage, author_true
+lagre author i local storage, author_true X

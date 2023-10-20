@@ -18,7 +18,6 @@ const getPosts = async (url) => {
     },
   });
   const data = await res.json();
-  console.log(data)
   let main = document.querySelector("#posts");
   main.innerHTML = "";
   let html = "";

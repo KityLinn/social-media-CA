@@ -4,7 +4,7 @@ filter oldest + more posts gir nyeste posts x
 “The client application must be attractive and responsive”
 login info i login script x
  
-viser ikke media
+viser ikke media x
 viser ikke author x
 ingen mulighet for å gå profiler x
 delete og edit er tilgjengelig på alle poster  X

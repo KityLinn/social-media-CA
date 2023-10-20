@@ -39,7 +39,6 @@ logIn.addEventListener("click", (e) => {
           errorsDiv.innerHTML = errorContainer;
     }
     else {
-        console.log(data)
         localStorage.setItem("token", data.accessToken);
         localStorage.setItem("author", data.name)
         window.location.href = "./posts.html"

@@ -35,7 +35,6 @@ const morePosts = document.querySelector("#more");
 morePosts.addEventListener("click", (e) => {
   e.preventDefault();
   page++;
-  console.log(page)
   getPosts(urls.posts(10));
 
 });
@@ -72,7 +71,7 @@ const searchFetch = async (value, url) => {
     },
   });
   const data = await res.json();
-  console.log(data)
+
   const searchData = data.filter(
     (e) =>
       e.body?.toLowerCase().includes(value) ||
@@ -93,22 +92,9 @@ const searchFetch = async (value, url) => {
     
   };
 
-  };
+};
 
-/*
-function filter() {
-  let tag = document.querySelector("#tag-search").value;
-  let active = document.querySelector("#active-check").checked;
-  let url = urls.posts;
-  if (tag) {
-    url += "&_tag=" + tag;
-  }
-  if (active) {
-    url += "&_active=true";
-  }
-  getPosts(url);
-}
-*/
+
 /**
  * renders out a div with the content provided in data
  * @param {Array} data 
@@ -134,7 +120,7 @@ const createPost = (data) => {
     <a href="./author.html?author=${author.name}">${author.name}</a>
   </div>`;
   }
-  };
+};
 
 
 let sorting = document.querySelector("#sorting")
@@ -144,9 +130,8 @@ sorting.addEventListener("change", (e) => {
     sortValue = "desc";
     page = 0;
     getPosts(urls.posts(10));
-    
-    
   }
+
   if (e.target.value == "asc" ) {
     sortValue = "asc";
     page = 0

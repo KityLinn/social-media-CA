@@ -29,22 +29,37 @@ getAuthor(urls.singleProfile(author))
 
 const createPost = (data) => {
   let {title, body, id, author, media} = data;
-  if (!media) {
+  if (!media && !body) {
     return`<div class="post">
     <h2>${title}</h2>
-    <p>${body}</p>
     <a href="./singlepost.html?id=${id}">Details</a>
     <a href="./author.html?author=${author.name}">${author.name}</a>
   </div>`;
-  } else {
-    return`<div class="post">
-    <h2>${title}</h2>
-    <div class="image">
-       <img src="${media}" alt="${title}">
-    </div>
-    <p>${body}</p>
-    <a href="./singlepost.html?id=${id}">Details</a>
-    <a href="./author.html?author=${author.name}">${author.name}</a>
+}else if (!body) {
+  return`<div class="post">
+  <h2>${title}</h2>
+  <div class="image">
+     <img src="${media}" alt="${title}">
+  </div>
+  <a href="./singlepost.html?id=${id}">Details</a>
+  <a href="./author.html?author=${author.name}">${author.name}</a>
+</div>`;
+}else if (!media) {
+  return`<div class="post">
+  <h2>${title}</h2>
+  <p>${body}</p>
+  <a href="./singlepost.html?id=${id}">Details</a>
+  <a href="./author.html?author=${author.name}">${author.name}</a>
+</div>`;
+}else {
+  return`<div class="post">
+  <h2>${title}</h2>
+  <div class="image">
+      <img src="${media}" alt="${title}">
+  </div>
+  <p>${body}</p>
+  <a href="./singlepost.html?id=${id}">Details</a>
+  <a href="./author.html?author=${author.name}">${author.name}</a>
   </div>`;
   }
 };

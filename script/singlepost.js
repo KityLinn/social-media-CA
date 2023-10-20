@@ -85,21 +85,35 @@ const editButtonFunc = (id) => {
 
 
 const createPost = (data) => {
-	let {title, body, id, author, media} = data;
-	if (!media) {
+	let {title, body, author, media} = data;
+	if (!media && !body) {
 	  return`<div class="post">
 	  <h2>${title}</h2>
-	  <p>${body}</p>
 	  <p>${author.name}</p>
-	  </div>`;
-	} else {
-	  return`<div class="post">
-	  <h2>${title}</h2>
-	  <div class="image">
-		 <img src="${media}" alt="${title}">
-	  </div>
-	  <p>${body}</p>
-	  <p>${author.name}</p>
-	  </div>`;;
+	</div>`;
+  }else if (!body) {
+	return`<div class="post">
+	<h2>${title}</h2>
+	<div class="image">
+	   <img src="${media}" alt="${title}">
+	</div>
+	<p>${author.name}</p>
+  </div>`;
+  }else if (!media) {
+	return`<div class="post">
+	<h2>${title}</h2>
+	<p>${body}</p>
+	<p>${author.name}</p>
+  </div>`;
+  }else {
+	return`<div class="post">
+	<h2>${title}</h2>
+	<div class="image">
+		<img src="${media}" alt="${title}">
+	</div>
+	<p>${body}</p>
+	<p>${author.name}</p>
+	</div>`;
 	}
-	};
+  };
+

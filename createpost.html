@@ -4,38 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="./script/createpost.js"></script>
-    <link rel="stylesheet" href="./css/create.css">
+    <link rel="stylesheet" href="./dist/css/index.css">
     <title>Create your own post</title>
 </head>
 <body>
   <header>
-    <a href="./posts.html">To post page</a>
-    <div class="header-title">
-      <h1>Welcome to the Noroff social media page</h1>
-    </div>
+    <nav class="navbar navbar-expand navbar-dark bg-primary-subtle justify-content-around mb-5">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link disabled" href="./sign-up.html">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary" href="./posts.html">Posts</a>
+        </li>
+      </ul>
+      <div>
+        <h1 class="h4 text-primary">Welcome to the Noroff social media page</h1>
+      </div>
+    </nav>
 </header>
-    <main>
-      <section class="create-section">
+    <main class="d-flex justify-content-center mt-5">
+      <section class="class=d-flex justify-content-center flex-column align-items-center gap-4">
         <div class="create-title">
-          <h2>Create a new post</h2>
+          <h2 class="h3 fw-normal mb-4 text-center">Create a new post</h2>
         </div>
-        <form class="create-form">
-          <div class="create-div">
-            <label class="form-label" for="post-title">Your post title</label>
-            <input type="text" id="post-title" name="title"/>
+        <form class="form-signin d-flex flex-column gap-2 border border-2 border-primary rounded shadow p-5">
+          <div class="form floating">
+            <input type="text" id="post-title" class="form-control" name="title" placeholder="Your Post Title"/>
+            <label class="fw-medium" for="post-title"></label>
           </div>
 
-          <div class="create-div">
-            <label class="form-label" for="post-content">Your post content</label>
-            <textarea name="content" id="post-content" cols="30" rows="10"></textarea>
+          <div class="form-floating">
+            <textarea name="content" id="post-content" cols="30" rows="10" placeholder="Your Post Content"></textarea>
+            <label class="form-label" for="post-content"></label>
           </div>
-          <div class="create-div">
-            <label class="form-label" for="post-image">Post image link</label>
-            <input type="text" id="post-image" name="image"/>
+          <div class="form-floating">
+            <input type="text" id="post-image" name="image" placeholder="Post Image Link"/>
+            <label class="form-label" for="post-image"></label>
           </div>
 
           <div>
-            <button type="submit" id="post-submit">Submit your post</button>
+            <button type="submit" id="post-submit" class="btn btn-outline-primary">Submit your post</button>
           </div>
           <div id="errors-div">
           </div>

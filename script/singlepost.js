@@ -30,7 +30,7 @@ const getPosts = async (url) => {
 		main.innerHTML += `
 		<button class="btn btn-outline-primary w-100" id="delete">Delete Post</button>
 		<p id="error"></p>
-		<button class="btn btn-outline-primary w-100" id="delete" id="edit">Edit Post</button>`
+		<button class="btn btn-outline-primary w-100" id="edit">Edit Post</button>`
 		deleteButtonFunc(id)
 		editButtonFunc(id)
 	}

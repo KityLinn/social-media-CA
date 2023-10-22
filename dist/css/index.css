@@ -11860,4 +11860,20 @@ textarea.form-control-lg {
   padding: 30px;
 }
 
+.post {
+  width: 300px;
+  max-width: 300px;
+  border: solid black 2px;
+  padding: 20px;
+}
+
+.image {
+  max-width: 300px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
 /*# sourceMappingURL=index.css.map */

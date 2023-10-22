@@ -24,7 +24,28 @@
         </nav>
       </header>
     <main class="d-flex justify-content-center">
-        <section class="row">
+        <section class="d-flex justify-content-center flex-column align-items-center gap-4">
+            <h2 class="h3 fw-normal mb-4 text-center">Check out the posts feed</h2>
+            <div>
+                <a href="./createpost.html">Create a new post</a>
+            </div>
+            <div>
+                <select name="sort" id="sorting" class="form-select-sm">
+                    <option selected disabled value="info">Sort by newest and oldest</option>
+                    <option value="desc">Newest</option>
+                    <option value="asc">oldest</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" name="search" id="search" class="border border-1 border-primary p-1" placeholder="search among posts">
+                <button type="submit" class="btn btn-primary" id="search-button">Click to search</button>
+                <p id="notfind"></p>
+            </div>
+            <div id="posts" class="d-flex gap-3 flex-column"></div>
+            <div>
+            <div>
+                <button type="submit" class="btn btn-secondary" id="more">More posts</button>
+            </div>    
 
         </section>
     </main>

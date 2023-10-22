@@ -107,7 +107,7 @@ const createPost = (data) => {
     <div class="card-body">
     <h2 class="card-title">${title}</h2>
     <a href="./singlepost.html?id=${id}" class="btn btn-primary">Details</a>
-    <a href="./author.html?author=${author.name}" class="btn btn-primary">${author.name}</a>
+    <a href="./author.html?author=${author.name}" class="btn btn-outline-primary">${author.name}</a>
     </div>
   </div>`;
 }else if (!body) {
@@ -118,7 +118,7 @@ const createPost = (data) => {
   <div class="card-body">
   <h2 class="card-title">${title}</h2>
   <a href="./singlepost.html?id=${id}" class="btn btn-primary">Details</a>
-  <a href="./author.html?author=${author.name}" class="btn btn-primary">${author.name}</a>
+  <a href="./author.html?author=${author.name}" class="btn btn-outline-primary">${author.name}</a>
   </div>
 </div>`;
 }else if (!media) {
@@ -127,7 +127,7 @@ const createPost = (data) => {
   <h2 class="card-title">${title}</h2>
   <p class="card-text">${body}</p>
   <a href="./singlepost.html?id=${id}" class="btn btn-primary">Details</a>
-  <a href="./author.html?author=${author.name}" class="btn btn-primary">${author.name}</a>
+  <a href="./author.html?author=${author.name}" class="btn btn-outline-primary">${author.name}</a>
   </div>
 </div>`;
 }else {
@@ -139,7 +139,7 @@ const createPost = (data) => {
   <h2 class="card-title">${title}</h2>
   <p class="card-text">${body}</p>
   <a href="./singlepost.html?id=${id}" class="btn btn-primary">Details</a>
-  <a href="./author.html?author=${author.name}" class="btn btn-primary">${author.name}</a>
+  <a href="./author.html?author=${author.name}" class="btn btn-outline-primary">${author.name}</a>
   </div>
 </div>`;
   }

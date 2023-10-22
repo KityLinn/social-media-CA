@@ -113,7 +113,7 @@ const createPost = (data) => {
 }else if (!body) {
   return`<div class="post card">
   <div class="image">
-    <img src="${media}" alt="${title}">
+    <img class="rounded" src="${media}" alt="${title}">
   </div>
   <div class="card-body">
   <h2 class="card-title">${title}</h2>
@@ -133,7 +133,7 @@ const createPost = (data) => {
 }else {
   return`<div class="post card">
   <div class="image">
-    <img src="${media}" alt="${title}">
+    <img class="rounded" src="${media}" alt="${title}">
   </div>
   <div class="card-body">
   <h2 class="card-title">${title}</h2>

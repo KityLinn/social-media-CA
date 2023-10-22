@@ -103,37 +103,45 @@ const searchFetch = async (value, url) => {
 const createPost = (data) => {
   let {title, body, id, author, media} = data;
   if (!media && !body) {
-    return`<div class="post">
-    <h2>${title}</h2>
-    <a href="./singlepost.html?id=${id}">Details</a>
-    <a href="./author.html?author=${author.name}">${author.name}</a>
+    return`<div class="post card">
+    <div class="card-body">
+    <h2 class="card-title">${title}</h2>
+    <a href="./singlepost.html?id=${id}" class="btn btn-primary">Details</a>
+    <a href="./author.html?author=${author.name}" class="btn btn-primary">${author.name}</a>
+    </div>
   </div>`;
 }else if (!body) {
-  return`<div class="post">
-  <h2>${title}</h2>
+  return`<div class="post card">
   <div class="image">
-     <img src="${media}" alt="${title}">
+    <img src="${media}" alt="${title}">
   </div>
-  <a href="./singlepost.html?id=${id}">Details</a>
-  <a href="./author.html?author=${author.name}">${author.name}</a>
+  <div class="card-body">
+  <h2 class="card-title">${title}</h2>
+  <a href="./singlepost.html?id=${id}" class="btn btn-primary">Details</a>
+  <a href="./author.html?author=${author.name}" class="btn btn-primary">${author.name}</a>
+  </div>
 </div>`;
 }else if (!media) {
-  return`<div class="post">
-  <h2>${title}</h2>
-  <p>${body}</p>
-  <a href="./singlepost.html?id=${id}">Details</a>
-  <a href="./author.html?author=${author.name}">${author.name}</a>
+  return`<div class="post card">
+  <div class="card-body">
+  <h2 class="card-title">${title}</h2>
+  <p class="card-text">${body}</p>
+  <a href="./singlepost.html?id=${id}" class="btn btn-primary">Details</a>
+  <a href="./author.html?author=${author.name}" class="btn btn-primary">${author.name}</a>
+  </div>
 </div>`;
 }else {
-  return`<div class="post">
-  <h2>${title}</h2>
+  return`<div class="post card">
   <div class="image">
-      <img src="${media}" alt="${title}">
+    <img src="${media}" alt="${title}">
   </div>
-  <p>${body}</p>
-  <a href="./singlepost.html?id=${id}">Details</a>
-  <a href="./author.html?author=${author.name}">${author.name}</a>
-  </div>`;
+  <div class="card-body">
+  <h2 class="card-title">${title}</h2>
+  <p class="card-text">${body}</p>
+  <a href="./singlepost.html?id=${id}" class="btn btn-primary">Details</a>
+  <a href="./author.html?author=${author.name}" class="btn btn-primary">${author.name}</a>
+  </div>
+</div>`;
   }
 };
 

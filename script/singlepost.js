@@ -28,9 +28,9 @@ const getPosts = async (url) => {
 	document.title = title;
 	if (author.name === user) {
 		main.innerHTML += `
-		<button id="delete">Delete Post</button>
+		<button class="btn btn-outline-primary w-100" id="delete">Delete Post</button>
 		<p id="error"></p>
-		<button id="edit">Edit Post</button>`
+		<button class="btn btn-outline-primary w-100" id="delete" id="edit">Edit Post</button>`
 		deleteButtonFunc(id)
 		editButtonFunc(id)
 	}

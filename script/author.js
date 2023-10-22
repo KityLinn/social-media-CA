@@ -29,6 +29,7 @@ getAuthor(urls.singleProfile(author))
 
 const createPost = (data) => {
   let {title, body, id, author, media} = data;
+  document.title = author.name;
   if (!media && !body) {
 		return`<div class="post card">
 		<div class="card-body">

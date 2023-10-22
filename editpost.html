@@ -4,22 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="./script/editpost.js"></script>
-    <link rel="stylesheet" href="./css/create.css">
+    <link rel="stylesheet" href="./dist/css/index.css">
     <title>Edit your post</title>
 </head>
 <body>
   <header>
-    <a href="./posts.html">To post page</a>
-    <div class="header-title">
-      <h1>Welcome to the Noroff social media page</h1>
-    </div>
+    <nav class="navbar navbar-expand navbar-dark bg-primary-subtle justify-content-around mb-5">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link disabled" href="./sign-up.html">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary" href="./posts.html">Posts</a>
+        </li>
+      </ul>
+      <div>
+        <h1 class="h4 text-primary">Welcome to the Noroff social media page</h1>
+      </div>
+    </nav>
 </header>
-    <main>
-      <section class="create-section">
+    <main class="d-flex justify-content-center mt-5">
+      <section  class="class=d-flex justify-content-center flex-column align-items-center gap-4">
         <div class="create-title">
-          <h2>Edit your post</h2>
+          <h2 class="h3 fw-normal mb-4 text-center">Edit your post</h2>
         </div>
-        <form class="create-form" id="posts">
+        <form class="form-signin d-flex flex-column gap-2 border border-2 border-primary rounded shadow p-5" id="posts">
           
 
         </form>    

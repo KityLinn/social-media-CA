@@ -23,25 +23,27 @@ const getEdit = async (url) => {
 	let main = document.querySelector("#posts");
 	main.innerHTML = "";
 	  main.innerHTML += `
-  <div class="create-div">
-    <label class="form-label" for="post-title">Your post title</label>
-    <input type="text" id="post-title" name="title" value ="${title}"/>
+  <div class="form floating">
+    <input type="text" id="post-title" class="form-control" name="title" value="${title}"/>
+    <label class="fw-medium" for="post-title"></label>
   </div>
 
-  <div class="create-div">
-    <label class="form-label" for="post-content">Your post content</label>
-    <textarea name="content" id="post-content" cols="30" rows="10">${body}</textarea>
-  </div>
 
-  <div class="create-div">
-    <label class="form-label" for="post-image">Post image link</label>
-    <input type="text" id="post-image" name="image" value =${media}/>
-  </div>
+  <div class="form-floating">
+  <textarea name="content" id="post-content" cols="30" rows="10">${body}</textarea>
+  <label class="form-label" for="post-content"></label>
+</div>
 
-  <div class="create-div">
-    <button type="submit" id="post-edit">Submit your post</button>
-    <p id="error"></p>
-  </div> `;
+<div class="form-floating">
+<input type="text" id="post-image" name="image"value="${media}"/>
+<label class="form-label" for="post-image"></label>
+</div>
+
+<div>
+<button type="submit" id="post-edit" class="btn btn-outline-primary">Edit your post</button>
+</div>
+<div id="errors-div">
+</div> `;
 const postEdit = document.querySelector("#post-edit");
 const postTitle = document.querySelector("#post-title");
 const postContent = document.querySelector("#post-content");

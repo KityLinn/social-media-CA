@@ -87,33 +87,41 @@ const editButtonFunc = (id) => {
 const createPost = (data) => {
 	let {title, body, author, media} = data;
 	if (!media && !body) {
-	  return`<div class="post">
-	  <h2>${title}</h2>
-	  <p>${author.name}</p>
-	</div>`;
+		return`<div class="post card">
+		<div class="card-body">
+		  <h2 class="card-title">${title}</h2>
+		  <p>${author.name}</p>
+		</div>
+	  </div>`;
   }else if (!body) {
-	return`<div class="post">
-	<h2>${title}</h2>
-	<div class="image">
-	   <img src="${media}" alt="${title}">
+	return`<div class="post card">
+  <div class="image">
+    <img class="rounded" src="${media}" alt="${title}">
+  </div>
+	<div class="card-body">
+	  <h2 class="card-title">${title}</h2>
+	  <p>${author.name}</p>
 	</div>
-	<p>${author.name}</p>
   </div>`;
   }else if (!media) {
-	return`<div class="post">
-	<h2>${title}</h2>
-	<p>${body}</p>
-	<p>${author.name}</p>
-  </div>`;
-  }else {
-	return`<div class="post">
-	<h2>${title}</h2>
-	<div class="image">
-		<img src="${media}" alt="${title}">
-	</div>
-	<p>${body}</p>
-	<p>${author.name}</p>
+	return`<div class="post card">
+	  <div class="card-body">
+		<h2 class="card-title">${title}</h2>
+		<p class="card-text">${body}</p>
+		<p class="card-text">${author.name}</p>
+	  </div>
 	</div>`;
+  }else {
+	return`<div class="post card">
+  <div class="image">
+    <img class="rounded" src="${media}" alt="${title}">
+  </div>
+  <div class="card-body">
+  <h2 class="card-title">${title}</h2>
+  <p class="card-text">${body}</p>
+  <p class="card-text">${author.name}</p>
+  </div>
+</div>`;
 	}
   };
 

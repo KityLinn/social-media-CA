@@ -90,7 +90,7 @@ const createPost = (data) => {
 		return`<div class="post card">
 		<div class="card-body">
 		  <h2 class="card-title">${title}</h2>
-		  <p>${author.name}</p>
+		  <p class="card-text">${author.name}</p>
 		</div>
 	  </div>`;
   }else if (!body) {

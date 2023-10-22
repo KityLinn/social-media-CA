@@ -30,36 +30,44 @@ getAuthor(urls.singleProfile(author))
 const createPost = (data) => {
   let {title, body, id, author, media} = data;
   if (!media && !body) {
-    return`<div class="post">
-    <h2>${title}</h2>
-    <a href="./singlepost.html?id=${id}">Details</a>
-    <a href="./author.html?author=${author.name}">${author.name}</a>
-  </div>`;
+		return`<div class="post card">
+		<div class="card-body">
+		  <h2 class="card-title">${title}</h2>
+      <p class="card-text">${author.name}</p>
+      <a href="./singlepost.html?id=${id}" class="btn btn-primary">Details</a>
+		</div>
+	  </div>`;
 }else if (!body) {
-  return`<div class="post">
-  <h2>${title}</h2>
+  return`<div class="post card">
   <div class="image">
-     <img src="${media}" alt="${title}">
+     <img class="rounded" src="${media}" alt="${title}">
   </div>
-  <a href="./singlepost.html?id=${id}">Details</a>
-  <a href="./author.html?author=${author.name}">${author.name}</a>
-</div>`;
+  <div class="card-body">
+    <h2 class="card-title">${title}</h2>
+    <p class="card-text">${author.name}</p>
+    <a href="./singlepost.html?id=${id}" class="btn btn-primary">Details</a>
+  </div>
+  </div>`;
 }else if (!media) {
-  return`<div class="post">
-  <h2>${title}</h2>
-  <p>${body}</p>
-  <a href="./singlepost.html?id=${id}">Details</a>
-  <a href="./author.html?author=${author.name}">${author.name}</a>
-</div>`;
-}else {
-  return`<div class="post">
-  <h2>${title}</h2>
-  <div class="image">
-      <img src="${media}" alt="${title}">
+  return`<div class="post card">
+  <div class="card-body">
+    <h2 class="card-title">${title}</h2>
+    <p class="card-text">${body}</p>
+    <p class="card-text">${author.name}</p>
+    <a href="./singlepost.html?id=${id}" class="btn btn-primary">Details</a>
   </div>
-  <p>${body}</p>
-  <a href="./singlepost.html?id=${id}">Details</a>
-  <a href="./author.html?author=${author.name}">${author.name}</a>
+  </div>`;
+}else {
+  return`<div class="post card">
+  <div class="image">
+    <img class="rounded" src="${media}" alt="${title}">
+  </div>
+  <div class="card-body">
+    <h2 class="card-title">${title}</h2>
+    <p class="card-text">${body}</p>
+    <p class="card-text">${author.name}</p>
+    <a href="./singlepost.html?id=${id}" class="btn btn-primary">Details</a>
+  </div>
   </div>`;
   }
 };

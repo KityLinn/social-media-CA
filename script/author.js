@@ -4,6 +4,10 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const author = params.get("author")
 
+const user = localStorage.getItem("author");
+let yourPosts = document.querySelector("#your-posts");
+yourPosts.innerHTML = `<a class="btn btn-primary" href="./author.html?author=${user}"">Your posts</a>`;
+
 
 const getAuthor = async (url) => {
     const token = localStorage.getItem("token");

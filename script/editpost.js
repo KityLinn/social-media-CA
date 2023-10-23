@@ -1,5 +1,9 @@
 import { urls } from "./module.mjs";
 
+const user = localStorage.getItem("author");
+let yourPosts = document.querySelector("#your-posts");
+yourPosts.innerHTML = `<a class="btn btn-primary" href="./author.html?author=${user}"">Your posts</a>`;
+
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");

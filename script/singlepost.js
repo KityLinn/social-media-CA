@@ -4,6 +4,10 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
+const user = localStorage.getItem("author");
+let yourPosts = document.querySelector("#your-posts");
+yourPosts.innerHTML = `<a class="btn btn-primary" href="./author.html?author=${user}"">Your posts</a>`;
+
 /**
  * fetches with the provided url and renders out a single post
  * also creates delete and edit buttons
@@ -12,7 +16,7 @@ const id = params.get("id");
 
 const getPosts = async (url) => {
 	const token = localStorage.getItem("token");
-	const user = localStorage.getItem("author")
+	const user = localStorage.getItem("author");
 	const res = await fetch(url, {
 		method: "GET",
 		headers: {

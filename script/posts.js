@@ -3,6 +3,10 @@ let notfind = document.querySelector("#notfind");
 let page = 0;
 let sortValue = "desc"
 
+const user = localStorage.getItem("author");
+let yourPosts = document.querySelector("#your-posts");
+yourPosts.innerHTML = `<a class="btn btn-primary" href="./author.html?author=${user}"">Your posts</a>`;
+
 /**
  * fetches based off a url and runs CreatePost function with the data
  * @param {string} url 

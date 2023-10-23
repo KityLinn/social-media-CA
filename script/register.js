@@ -2,8 +2,8 @@ import { urls } from "./module.mjs";
 
 
 
-const register = document.querySelector("#Signup");
-const regUsername = document.querySelector("#singup-name");
+const register = document.querySelector("#signup");
+const regUsername = document.querySelector("#signup-name");
 const regEmail = document.querySelector("#signup-email");
 const regPassword = document.querySelector("#signup-password");
 const errorsDiv = document.querySelector("#errors-div");

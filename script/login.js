@@ -18,6 +18,7 @@ logIn.addEventListener("click", (e) => {
 
 /**
  * fetches using the provided URL. Sends the object data to the API and makes a login request
+ * handles errors and displays them
  * @param {string} loginURL 
  * @param {object} userData 
  */
@@ -46,7 +47,11 @@ logIn.addEventListener("click", (e) => {
 
 
 }
-
+/**
+ * returns a string with the error message from data
+ * @param {array} data 
+ * @returns 
+ */
 const createError = (data) => {
     return `<p id="error">${data.message}</p>`
 }

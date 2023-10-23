@@ -87,7 +87,12 @@ const editButtonFunc = (id) => {
 	});	
 }
 
-
+/**
+ * renders out a div with the content provided in data
+ * checks for if there's meddia or body and creates different divs accordingly
+ * @param {Array} data 
+ * @returns 
+ */
 const createPost = (data) => {
 	let {title, body, author, media} = data;
 	if (!media && !body) {

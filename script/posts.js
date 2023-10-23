@@ -50,21 +50,22 @@ searchButton.addEventListener("click", (e) => {
   e.preventDefault();
   searchFunc(search.value.toLowerCase(), urls.search);
 });
+
 /**
  * sends teh serch value and search url into a searchfetch function
  * @param {string} searchValue 
  * @param {string} searchURL 
  */
-
 const searchFunc = (searchValue, searchURL) => {
   searchFetch(searchValue, searchURL);
 };
+
 /**
  * fetches with a privided url and then filters the data
+ * Gives an error if it can't find the search value
  * @param {string} value 
  * @param {string} url 
  */
-
 const searchFetch = async (value, url) => {
   const token = localStorage.getItem("token");
   const res = await fetch(url, {
@@ -101,6 +102,7 @@ const searchFetch = async (value, url) => {
 
 /**
  * renders out a div with the content provided in data
+ * checks for if there's meddia or body and creates different divs accordingly
  * @param {Array} data 
  * @returns 
  */

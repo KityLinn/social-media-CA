@@ -11,7 +11,10 @@ const user = localStorage.getItem("author");
 let yourPosts = document.querySelector("#your-posts");
 yourPosts.innerHTML = `<a class="btn btn-primary" href="./author.html?author=${user}"">Your posts</a>`;
 
-
+/**
+ * fetches the posts based on the name of the author
+ * @param {string} url 
+ */
 const getAuthor = async (url) => {
     const token = localStorage.getItem("token");
     const res = await fetch(url, {
@@ -33,7 +36,12 @@ const getAuthor = async (url) => {
 };
 getAuthor(urls.singleProfile(author))
 
-
+/**
+ * renders out a div with the content provided in data
+ * checks for if there's meddia or body and creates different divs accordingly
+ * @param {Array} data 
+ * @returns 
+ */
 const createPost = (data) => {
   let {title, body, id, author, media} = data;
   document.title = author.name;

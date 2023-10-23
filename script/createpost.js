@@ -52,7 +52,11 @@ const createPost = async (createURL, postData) => {
  
 
 }
-
+/**
+ * returns a string with the error message from data
+ * @param {array} data 
+ * @returns 
+ */
 const createError = (data) => {
     return `<p id="error">${data.message}</p>`
 }

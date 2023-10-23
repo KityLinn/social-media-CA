@@ -11861,14 +11861,16 @@ textarea.form-control-lg {
 }
 
 .post {
-  width: 300px;
-  max-width: 300px;
+  width: 400px;
+  max-width: 400px;
   border: solid black 2px;
   padding: 20px;
 }
 
 .image {
   max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img {
